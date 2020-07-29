@@ -63,3 +63,43 @@ Ans- n^2+2/ Not Correct
 
 Correct Ans -> O(n^2)
 
+18/07-2020 - Day 2
+Collections - A group of elements
+List - All the properties of a Collection, it has order. No fixed length
+    1. Array - Common implementation of List
+               Each Array has a location called index. Index is a Number associated with that place in the Array.
+
+    2. Linked List - 
+            A single element will store:
+                1. Value
+                2. Next: reference to the next level(these represents the memory location in deep level)
+            Adding a new element
+                1. We need to mention the reference of the next element
+                2. But we should always assign the pointer of the new element to the next element before assigning
+                   the old Value to the new Value otherwise we'll lose the reference forever
+            Time - Constant
+    3. Doubly Linked List
+            Can traverse both directions
+    To Apply:(https://github.com/M2skills/Linked-List-in-Python#linked-list-in-python)
+    isEmpty() : method returns true if the list is empty **Done**
+    addToStart(): method to add a node at starting
+    addToEnd() : method to add a node at the end
+    display() : method to display all the elements of the Linked List
+    length() : method that returns the length of the Linked List
+    insert() : method to insert element at a given position in the Linked List
+    removePosition() : method to delete a element at a given position
+    remove() : method to delete a data element 
+    findMin() : method that returns the max element
+    findMax() : method that returns the min element
+    count() : method that returns the occurences of an element
+    pop() : pop method removes last element of the Linked List
+    tostring() : method that returns a string of all elements of the String
+    copy() : method that returns the copy of the list
+    clear() : method that clears the Linked List
+    reverse() : method that returns reversed linked list
+    push() : method pushes element to the Linked List
+    index() : method that returns index of a particular element
+    atIndex() : method that returns element at a particular position
+    toList() : method returns builtin List of python consisting of Elements of Linked List
+    toSet() : method returns builtin Set of python consisting of Elements of Linked List
+    sort() : method that sorts Linked List
