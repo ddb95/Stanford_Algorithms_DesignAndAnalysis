@@ -61,6 +61,14 @@ class LinkedList(object):
             else:
                 current = current.next
 
+    def displayAllValues(self):
+        current = self.head
+        while current:
+            if current.value:
+                print(current.value)
+                current = current.next
+        return None
+
 
 # Test cases
 # Set up some Elements
@@ -81,12 +89,12 @@ ll.insert(e4, 3)
 ll.insert(e5, 2)
 ll.insert(e6, 6)
 # Should print 4 now
-print(ll.get_position(1).value)
-print(ll.get_position(2).value)
-print(ll.get_position(3).value)
-print(ll.get_position(4).value)
-print(ll.get_position(5).value)
-print(ll.get_position(6).value)
+# print(ll.get_position(1).value)
+# print(ll.get_position(2).value)
+# print(ll.get_position(3).value)
+# print(ll.get_position(4).value)
+# print(ll.get_position(5).value)
+# print(ll.get_position(6).value)
 
 # Test delete
 # ll.delete(3)
@@ -96,10 +104,12 @@ print(ll.get_position(6).value)
 print(ll.isEmpty())
 
 ll.addToStart(e7)
-print(ll.get_position(1).value)
-print(ll.get_position(2).value)
-print(ll.get_position(3).value)
-print(ll.get_position(4).value)
-print(ll.get_position(5).value)
-print(ll.get_position(6).value)
-print(ll.get_position(7).value)
+# print(ll.get_position(1).value)
+# print(ll.get_position(2).value)
+# print(ll.get_position(3).value)
+# print(ll.get_position(4).value)
+# print(ll.get_position(5).value)
+# print(ll.get_position(6).value)
+# print(ll.get_position(7).value)
+
+ll.displayAllValues()
