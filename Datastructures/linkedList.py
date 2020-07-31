@@ -84,7 +84,7 @@ class LinkedList(object):
         current = self.head
         lowestValue = current.value
         greatestValue = current.value
-        while current.next:
+        while current:
             if current.value < lowestValue:
                 lowestValue = current.value
             elif current.value > greatestValue:
@@ -92,12 +92,15 @@ class LinkedList(object):
             current = current.next
         return 'lowestValue: ' + str(lowestValue) + ' greatestValue: ' + str(greatestValue)
 
+    def addToEnd(self, value):
+        current = self.head
+        while current:
+            if current.next != None:
+                current = current.next
+            else:
+                current.next = value
+                return 'Added to the end'
 
-# if current.next:
-#                 if current.value < lowestValue:
-#                     lowestValue = current.value
-#             else:
-#                 current = current.next
 
 # Test cases
 # Set up some Elements
@@ -108,6 +111,7 @@ e4 = Element(4)
 e5 = Element(5)
 e6 = Element(6)
 e7 = Element(7)
+e8 = Element(100)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
@@ -133,6 +137,7 @@ ll.insert(e6, 6)
 # print(ll.isEmpty())
 
 ll.addToStart(e7)
+ll.addToEnd(e8)
 # print(ll.get_position(1).value)
 # print(ll.get_position(2).value)
 # print(ll.get_position(3).value)
@@ -142,6 +147,6 @@ ll.addToStart(e7)
 # print(ll.get_position(7).value)
 
 # ll.displayAllValues()
-# print(ll.lengthOfList())
+print(ll.lengthOfList())
 
-print(ll.findMin())
+print(ll.findMaxMin())
