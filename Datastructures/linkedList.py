@@ -67,8 +67,37 @@ class LinkedList(object):
             if current.value:
                 print(current.value)
                 current = current.next
-        return None
+        return
 
+    def lengthOfList(self):
+        current = self.head
+        counter = 0
+        while current.value != None:
+            if current.value:
+                counter = counter + 1
+                if current.next == None:
+                    return counter
+                else:
+                    current = current.next
+
+    def findMaxMin(self):
+        current = self.head
+        lowestValue = current.value
+        greatestValue = current.value
+        while current.next:
+            if current.value < lowestValue:
+                lowestValue = current.value
+            elif current.value > greatestValue:
+                greatestValue = current.value
+            current = current.next
+        return 'lowestValue: ' + str(lowestValue) + ' greatestValue: ' + str(greatestValue)
+
+
+# if current.next:
+#                 if current.value < lowestValue:
+#                     lowestValue = current.value
+#             else:
+#                 current = current.next
 
 # Test cases
 # Set up some Elements
@@ -78,7 +107,7 @@ e3 = Element(3)
 e4 = Element(4)
 e5 = Element(5)
 e6 = Element(6)
-e7 = Element(10)
+e7 = Element(7)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
@@ -101,7 +130,7 @@ ll.insert(e6, 6)
 # print('deleted')
 
 # print(ll.get_posit
-print(ll.isEmpty())
+# print(ll.isEmpty())
 
 ll.addToStart(e7)
 # print(ll.get_position(1).value)
@@ -112,4 +141,7 @@ ll.addToStart(e7)
 # print(ll.get_position(6).value)
 # print(ll.get_position(7).value)
 
-ll.displayAllValues()
+# ll.displayAllValues()
+# print(ll.lengthOfList())
+
+print(ll.findMin())
