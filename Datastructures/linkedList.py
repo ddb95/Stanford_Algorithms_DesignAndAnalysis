@@ -52,7 +52,7 @@ class LinkedList(object):
             else:
                 current = current.next
 
-    def delete(self, value):
+    def removeByValue(self, value):
         current = self.head
         while current.next:
             if current.value == value:
@@ -60,6 +60,19 @@ class LinkedList(object):
                 current.next = current.next.next
             else:
                 current = current.next
+
+    def removeByPosition(self, position):
+        current = self.head
+        counter = 0
+        while current:
+            counter = counter + 1
+            if counter == position:
+                previous.next = current.next
+                current = current.next
+            else:
+                previous = current
+                current = current.next
+        return
 
     def displayAllValues(self):
         current = self.head
@@ -101,6 +114,17 @@ class LinkedList(object):
                 current.next = value
                 return 'Added to the end'
 
+    def count(self, value):
+        current = self.head
+        counter = 0
+        while current:
+            if current.value == value:
+                counter = counter + 1
+                current = current.next
+            else:
+                current = current.next
+        return "The Element " + str(value) + " occurs " + str(counter) + " times"
+
 
 # Test cases
 # Set up some Elements
@@ -111,7 +135,7 @@ e4 = Element(4)
 e5 = Element(5)
 e6 = Element(6)
 e7 = Element(7)
-e8 = Element(100)
+e8 = Element(8)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
@@ -129,9 +153,9 @@ ll.insert(e6, 6)
 # print(ll.get_position(5).value)
 # print(ll.get_position(6).value)
 
-# Test delete
-# ll.delete(3)
-# print('deleted')
+# Test removeByValue
+# ll.removeByValue(3)
+# print('removeByValued')
 
 # print(ll.get_posit
 # print(ll.isEmpty())
@@ -145,8 +169,7 @@ ll.addToEnd(e8)
 # print(ll.get_position(5).value)
 # print(ll.get_position(6).value)
 # print(ll.get_position(7).value)
-
+ll.removeByPosition(4)
 # ll.displayAllValues()
-print(ll.lengthOfList())
-
-print(ll.findMaxMin())
+# print(ll.findMaxMin())
+# print(ll.count(3))
