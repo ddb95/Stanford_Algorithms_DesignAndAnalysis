@@ -18,9 +18,9 @@
 - [x] pop() : pop method removes last element of the Linked List
 - [x] tostring() : method that returns a string of all elements of the String
 - [x] index() : method that returns index of a particular element
-- [ ] copy() : method that returns the copy of the list
-- [ ] clear() : method that clears the Linked List
-- [ ] reverse() : method that returns reversed linked list
+- [x] copy() : method that returns the copy of the list
+- [x] clear() : method that clears the Linked List
 - [ ] toList() : method returns builtin List of python consisting of Elements of Linked List
 - [ ] toSet() : method returns builtin Set of python consisting of Elements of Linked List
+- [ ] reverse() : method that returns reversed linked list
 - [ ] sort() : method that sorts Linked List

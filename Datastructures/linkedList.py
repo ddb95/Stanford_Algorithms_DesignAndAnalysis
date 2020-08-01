@@ -160,8 +160,29 @@ class LinkedList(object):
         self = linkedList
         return linkedList
 
-        # Test cases
-        # Set up some Elements
+    def clear(self):
+        self.head = None
+        return self
+
+    def toList(self):
+        listValue = []
+        current = self.head
+        while current:
+            listValue.append(current.value)
+            current = current.next
+        return listValue
+
+    def toSet(self):
+        setValue = set()
+        current = self.head
+        while current:
+            setValue.add(current.value)
+            current = current.next
+        return setValue
+
+
+# Test cases
+# Set up some Elements
 e1 = Element(1)
 e2 = Element(4)
 e3 = Element(3)
@@ -216,3 +237,7 @@ ll.addToEnd(e8)
 # print(ll.toString())
 # ll.index(4)
 # ll2 = ll2.copy(ll)
+# ll.clear()
+# ll.displayAllValues()
+# print(ll.toList())
+# print(ll.toSet())
