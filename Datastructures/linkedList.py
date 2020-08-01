@@ -125,20 +125,58 @@ class LinkedList(object):
                 current = current.next
         return "The Element " + str(value) + " occurs " + str(counter) + " times"
 
+    def pop(self):
+        current = self.head
+        while current:
+            if current.next == None:
+                previous.next = None
+                return 'Last Element Popped'
+            else:
+                previous = current
+                current = current.next
 
-# Test cases
-# Set up some Elements
+    def toString(self):
+        current = self.head
+        displayString = ''
+        while current:
+            displayString += str(current.value) + ' '
+            current = current.next
+        return displayString
+
+    def index(self, value):
+        current = self.head
+        counterValue = 0
+        while current:
+            counterValue += 1
+            if current.value == value:
+                print('The index of the value: ' + str(value) +
+                      ' is : ' + str(counterValue))
+                current = current.next
+            else:
+                current = current.next
+        return None
+
+    def copy(self, linkedList):
+        current = self.head
+        linkedList = self.head
+        while current.next:
+            linkedList.next = current.next
+            current = current.next
+
+            # Test cases
+            # Set up some Elements
 e1 = Element(1)
-e2 = Element(2)
+e2 = Element(4)
 e3 = Element(3)
 e4 = Element(4)
 e5 = Element(5)
 e6 = Element(6)
-e7 = Element(7)
+e7 = Element(4)
 e8 = Element(8)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
+ll2 = LinkedList()
 ll.append(e2)
 ll.append(e3)
 # Test insert
@@ -169,7 +207,15 @@ ll.addToEnd(e8)
 # print(ll.get_position(5).value)
 # print(ll.get_position(6).value)
 # print(ll.get_position(7).value)
-ll.removeByPosition(4)
+# ll.removeByPosition(4)
+
+# print('Before Pop')
 # ll.displayAllValues()
 # print(ll.findMaxMin())
 # print(ll.count(3))
+# ll.pop()
+# print('After Pop')
+# ll.displayAllValues()
+# print(ll.toString())
+# ll.index(4)
+ll.copy(ll2)
