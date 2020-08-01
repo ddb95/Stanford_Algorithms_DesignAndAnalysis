@@ -157,14 +157,11 @@ class LinkedList(object):
         return None
 
     def copy(self, linkedList):
-        current = self.head
-        linkedList = self.head
-        while current.next:
-            linkedList.next = current.next
-            current = current.next
+        self = linkedList
+        return linkedList
 
-            # Test cases
-            # Set up some Elements
+        # Test cases
+        # Set up some Elements
 e1 = Element(1)
 e2 = Element(4)
 e3 = Element(3)
@@ -218,4 +215,4 @@ ll.addToEnd(e8)
 # ll.displayAllValues()
 # print(ll.toString())
 # ll.index(4)
-ll.copy(ll2)
+# ll2 = ll2.copy(ll)
