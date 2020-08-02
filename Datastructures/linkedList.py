@@ -180,16 +180,38 @@ class LinkedList(object):
             current = current.next
         return setValue
 
+    def sort(self):
+        current = self.head
+        elements = self.toList()
+        elements.sort()
+        counter = 0
+        while current and (counter < len(elements)):
+            current.value = elements[counter]
+            counter += 1
+            current = current.next
+        return self
+
+    def reverse(self):
+        current = self.head
+        elements = self.toList()
+        elements.sort(reverse=True)
+        counter = 0
+        while current and (counter < len(elements)):
+            current.value = elements[counter]
+            counter += 1
+            current = current.next
+        return self
+
 
 # Test cases
 # Set up some Elements
 e1 = Element(1)
-e2 = Element(4)
+e2 = Element(2)
 e3 = Element(3)
 e4 = Element(4)
 e5 = Element(5)
 e6 = Element(6)
-e7 = Element(4)
+e7 = Element(7)
 e8 = Element(8)
 
 # Start setting up a LinkedList
@@ -241,3 +263,6 @@ ll.addToEnd(e8)
 # ll.displayAllValues()
 # print(ll.toList())
 # print(ll.toSet())
+# ll.sort()
+ll.reverse()
+ll.displayAllValues()

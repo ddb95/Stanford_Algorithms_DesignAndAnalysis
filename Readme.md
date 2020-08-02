@@ -20,7 +20,7 @@
 - [x] index() : method that returns index of a particular element
 - [x] copy() : method that returns the copy of the list
 - [x] clear() : method that clears the Linked List
-- [ ] toList() : method returns builtin List of python consisting of Elements of Linked List
-- [ ] toSet() : method returns builtin Set of python consisting of Elements of Linked List
-- [ ] reverse() : method that returns reversed linked list
-- [ ] sort() : method that sorts Linked List
+- [x] toList() : method returns builtin List of python consisting of Elements of Linked List
+- [x] toSet() : method returns builtin Set of python consisting of Elements of Linked List
+- [x] sort() : method that sorts Linked List
+- [x] reverse() : method that returns reversed linked list
