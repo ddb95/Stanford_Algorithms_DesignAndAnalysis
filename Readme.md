@@ -24,3 +24,10 @@
 - [x] toSet() : method returns builtin Set of python consisting of Elements of Linked List
 - [x] sort() : method that sorts Linked List
 - [x] reverse() : method that returns reversed linked list
+
+<!-- To DO 
+    Check time complexity and space complexity
+    Check for null values
+
+    Application of Polynomial ADT (singly linkd list)
+ -->

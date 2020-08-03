@@ -265,5 +265,5 @@ if __name__ == '__main__':
     # print(ll.toList())
     # print(ll.toSet())
     # ll.sort()
-    ll.reverse()
+    # ll.reverse()
     ll.displayAllValues()
