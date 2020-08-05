@@ -39,8 +39,8 @@
 - [x] append() : method pushes element to the Linked List
 - [x] length() : method that returns the length of the Linked List
 - [ ] isEmpty() : method returns true if the list is empty
-- [ ] addToStart(): method to add a node at starting
-- [ ] getPosition() : method that returns element at a particular position
+- [x] addToStart(): method to add a node at starting
+- [x] getPosition() : method that returns element at a particular position
 - [ ] insert() : method to insert element at a given position in the Linked List
 - [ ] removeByValue() : method to delete a element of a given value
 - [ ] removeByPosition() : method to delete a element at a given position

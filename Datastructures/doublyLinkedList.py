@@ -26,6 +26,27 @@ class DoublyLinkedList(object):
             self.head = node
             self.sizeOfLinkedList += 1
 
+    def addToStart(self, value):
+        current = self.head
+        node = Element(value)
+        current.prev = node
+        node.next = current
+        self.head = node
+        self.sizeOfLinkedList += 1
+        return None
+
+    def getPosition(self, position):
+        current = self.head
+        currPosition = 0
+        if position > ll.sizeOfLinkedList:
+            return "Size exceeds the length of Linked List " + str(ll.sizeOfLinkedList)
+        else:
+            while current:
+                currPosition += 1
+                if currPosition == position:
+                    return "Element at " + str(position) + "th position is " + str(current.element)
+                current = current.next
+
 
 if __name__ == "__main__":
     ll = DoublyLinkedList()
@@ -33,4 +54,6 @@ if __name__ == "__main__":
     ll.append(2)
     ll.append(3)
     ll.append(4)
+    ll.addToStart(5)
+    print(ll.getPosition(4))
     print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
