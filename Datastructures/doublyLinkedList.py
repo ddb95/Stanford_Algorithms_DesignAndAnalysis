@@ -8,23 +8,29 @@ class Element(object):
 
 
 class DoublyLinkedList(object):
-    def __init__(self, header=None, trailer=None):
-        self.header = header
-        self.trailer = trailer
+    sizeOfLinkedList = 0
+
+    def __init__(self, head=None):
+        self.head = head
 
     def append(self, value):
-        current = self.header
-        if self.header and self.trailer:
-            return 'sa'
+        current = self.head
+        node = Element(value)
+        if current:
+            while current.next:
+                current = current.next
+            current.next = node
+            node.prev = current
+            self.sizeOfLinkedList += 1
         else:
-            self.header.next = value
-            self.trailer.prev = value
+            self.head = node
+            self.sizeOfLinkedList += 1
 
 
 if __name__ == "__main__":
-    e1 = Element(1)
-    e2 = Element(2)
-    e3 = Element(3)
     ll = DoublyLinkedList()
-    ll.append(e1)
-    ll.append(e2)
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    ll.append(4)
+    print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
