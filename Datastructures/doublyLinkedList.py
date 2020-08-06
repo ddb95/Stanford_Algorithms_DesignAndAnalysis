@@ -47,6 +47,13 @@ class DoublyLinkedList(object):
                     return "Element at " + str(position) + "th position is " + str(current.element)
                 current = current.next
 
+    def display(self):
+        current = self.head
+        while current:
+            print(current.element)
+            current = current.next
+        return None
+
 
 if __name__ == "__main__":
     ll = DoublyLinkedList()
@@ -57,3 +64,4 @@ if __name__ == "__main__":
     ll.addToStart(5)
     print(ll.getPosition(4))
     print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
+    ll.display()
