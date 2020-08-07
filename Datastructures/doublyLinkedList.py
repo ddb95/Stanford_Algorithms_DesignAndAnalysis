@@ -38,7 +38,7 @@ class DoublyLinkedList(object):
     def getPosition(self, position):
         current = self.head
         currPosition = 0
-        if position > ll.sizeOfLinkedList:
+        if position > self.sizeOfLinkedList:
             return "Size exceeds the length of Linked List " + str(ll.sizeOfLinkedList)
         else:
             while current:
@@ -54,6 +54,36 @@ class DoublyLinkedList(object):
             current = current.next
         return None
 
+    def insert(self, new_element, position):
+        new_element = Element(new_element)
+        current = self.head
+        counter = 0
+        if position > self.sizeOfLinkedList:
+            return "Position exceeds the length of the linked list"
+        else:
+            while current:
+                counter += 1
+                if counter == position:
+                    previous = current.prev
+                    new_element.next = current
+                    previous.next = new_element
+                    new_element.prev = previous
+                    self.sizeOfLinkedList += 1
+                else:
+                    current = current.next
+        return None
+
+    def removeByValue(self, value):
+        current = self.head
+        while current:
+            if current.element == value:
+                current.prev.next = current.next
+                current.next.prev = current.prev
+                current = current.next
+            else:
+                current = current.next
+        return None
+
 
 if __name__ == "__main__":
     ll = DoublyLinkedList()
@@ -64,4 +94,13 @@ if __name__ == "__main__":
     ll.addToStart(5)
     print(ll.getPosition(4))
     print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
+    print('Before Insertion')
+    ll.display()
+    print('\n')
+    print('After Insertion')
+    ll.insert(6, 3)
+    ll.display()
+    print('\n')
+    print('After Removing')
+    ll.removeByValue(6)
     ll.display()
