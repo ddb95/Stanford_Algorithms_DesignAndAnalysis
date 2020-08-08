@@ -75,6 +75,18 @@ class DoublyLinkedList(object):
                     current = current.next
         return None
 
+    def addToEnd(self, value):
+        node = Element(value)
+        current = self.head
+        while current:
+            if current.next != None:
+                current = current.next
+            else:
+                current.next = node
+                node.prev = current
+                self.sizeOfLinkedList += 1
+                return None
+
     def removeByValue(self, value):
         current = self.head
         while current:
@@ -92,6 +104,21 @@ class DoublyLinkedList(object):
         nextVal = valueOnPosition.next
         nextVal.prev = previousVal
         previousVal.next = nextVal
+
+    def findMinMax(self):
+        current = self.head
+        maxVal = current.element
+        minVal = current.element
+        while current:
+            if current.element > maxVal:
+                maxVal = current.element
+            elif current.element < minVal:
+                minVal = current.element
+            current = current.next
+        return "the max is: " + str(maxVal) + " and the min is: " + str(minVal)
+
+    def count(self, value):
+        pass
 
 
 if __name__ == "__main__":
@@ -113,3 +140,9 @@ if __name__ == "__main__":
     print('After Removing')
     ll.removeByPosition(2)
     ll.display()
+    print('\n')
+    print('After appending to the end')
+    ll.addToEnd(7)
+    ll.display()
+    print(ll.findMinMax())
+    ll.count(2)

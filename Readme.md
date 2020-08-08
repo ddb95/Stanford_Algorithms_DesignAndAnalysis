@@ -45,9 +45,9 @@
 - [x] insert() : method to insert element at a given position in the Linked List
 - [x] removeByValue() : method to delete a element of a given value
 - [x] removeByPosition() : method to delete a element at a given position
-- [ ] addToEnd() : method to add a node at the end
-- [ ] findMin() : method that returns the max element
-- [ ] findMax() : method that returns the min element
+- [x] addToEnd() : method to add a node at the end
+- [x] findMin() : method that returns the max element
+- [x] findMax() : method that returns the min element
 - [ ] count() : method that returns the occurences of an element
 - [ ] pop() : pop method removes last element of the Linked List
 - [ ] tostring() : method that returns a string of all elements of the String
