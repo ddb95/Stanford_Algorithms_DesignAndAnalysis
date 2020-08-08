@@ -44,7 +44,7 @@
 - [x] display() : method to display all the elements of the Linked List
 - [x] insert() : method to insert element at a given position in the Linked List
 - [x] removeByValue() : method to delete a element of a given value
-- [ ] removeByPosition() : method to delete a element at a given position
+- [x] removeByPosition() : method to delete a element at a given position
 - [ ] addToEnd() : method to add a node at the end
 - [ ] findMin() : method that returns the max element
 - [ ] findMax() : method that returns the min element

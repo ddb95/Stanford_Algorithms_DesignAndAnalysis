@@ -44,7 +44,9 @@ class DoublyLinkedList(object):
             while current:
                 currPosition += 1
                 if currPosition == position:
-                    return "Element at " + str(position) + "th position is " + str(current.element)
+                    print("Element at " + str(position) +
+                          "th position is " + str(current.element))
+                    return current
                 current = current.next
 
     def display(self):
@@ -84,6 +86,13 @@ class DoublyLinkedList(object):
                 current = current.next
         return None
 
+    def removeByPosition(self, position):
+        valueOnPosition = self.getPosition(position)
+        previousVal = valueOnPosition.prev
+        nextVal = valueOnPosition.next
+        nextVal.prev = previousVal
+        previousVal.next = nextVal
+
 
 if __name__ == "__main__":
     ll = DoublyLinkedList()
@@ -92,7 +101,7 @@ if __name__ == "__main__":
     ll.append(3)
     ll.append(4)
     ll.addToStart(5)
-    print(ll.getPosition(4))
+    ll.getPosition(4)
     print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
     print('Before Insertion')
     ll.display()
@@ -102,5 +111,5 @@ if __name__ == "__main__":
     ll.display()
     print('\n')
     print('After Removing')
-    ll.removeByValue(6)
+    ll.removeByPosition(2)
     ll.display()
