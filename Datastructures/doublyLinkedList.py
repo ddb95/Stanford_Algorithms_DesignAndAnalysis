@@ -118,7 +118,31 @@ class DoublyLinkedList(object):
         return "the max is: " + str(maxVal) + " and the min is: " + str(minVal)
 
     def count(self, value):
-        pass
+        current = self.head
+        count = 0
+        while current:
+            if current.element == value:
+                count += 1
+                current = current.next
+            current = current.next
+        return "The number of times " + str(value) + " repeats is/are " + str(count)
+
+    def pop(self):
+        current = self.head
+        while current:
+            if current.next != None:
+                current = current.next
+            else:
+                current.prev.next = None
+                return None
+
+    def toString(self):
+        current = self.head
+        valuesInStringOfLinkedList = ''
+        while current:
+            valuesInStringOfLinkedList += str(current.element) + ' '
+            current = current.next
+        return valuesInStringOfLinkedList
 
 
 if __name__ == "__main__":
@@ -128,11 +152,11 @@ if __name__ == "__main__":
     ll.append(3)
     ll.append(4)
     ll.addToStart(5)
-    ll.getPosition(4)
-    print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
-    print('Before Insertion')
-    ll.display()
-    print('\n')
+    # ll.getPosition(4)
+    # print('The size of the linked list is: ' + str(ll.sizeOfLinkedList))
+    # print('Before Insertion')
+    # ll.display()
+    # print('\n')
     print('After Insertion')
     ll.insert(6, 3)
     ll.display()
@@ -145,4 +169,9 @@ if __name__ == "__main__":
     ll.addToEnd(7)
     ll.display()
     print(ll.findMinMax())
-    ll.count(2)
+    print(ll.count(3))
+    print('\n')
+    print('After pop')
+    ll.pop()
+    ll.display()
+    print(ll.toString())
